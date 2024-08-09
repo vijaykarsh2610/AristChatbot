@@ -1,0 +1,357 @@
+/* Chatbot container */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Chatbot icon */
+.arist-Chatbot .chatbot-icon {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.arist-Chatbot .chatbot-icon svg {
+    width: 44px;
+    height: 39px;
+}
+
+/* Chatbot modal */
+.arist-Chatbot .chatbot-modal {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 400px;
+    /* max-height: 400px; */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Chatbot header */
+.arist-Chatbot .header {
+    background-color: var(--header-background-color, #DA291C); /* Default color */
+    color: var(--header-text-color, white); /* Default color */
+    padding: 10px;
+    font-size: 16px;
+    
+}
+
+.arist-Chatbot .header .close-button {
+    cursor: pointer;
+    font-size: 40px;
+    
+}
+.arist-Chatbot .close-button-container{
+    display: flex;
+    justify-content: space-between;
+}
+.arist-Chatbot .svg-container{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Chat messages container */
+.arist-Chatbot .chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    height: 50vh;
+    background-color: var(--chatWindow-background-color, white);
+}
+
+/* Input container */
+.arist-Chatbot .input-container {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+/* Input area */
+.arist-Chatbot .input-area {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.arist-Chatbot .input-area:focus {
+    outline: none;
+}
+
+/* Send button */
+.arist-Chatbot .send-button {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #DA291C;
+}
+
+/* Message */
+.arist-Chatbot .message {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: var(--font-family, 'Poppins'); /* Default font family */;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+  /* ----- pop up modal -----  */
+
+  /* Modal styles */
+  .arist-Chatbot .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .arist-Chatbot .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60vw;
+  }
+  
+  .arist-Chatbot .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .arist-Chatbot .close:hover,
+  .arist-Chatbot .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .arist-Chatbot .loading-screen {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20%;
+}
+#filePreview{
+    height: 80vh;
+    overflow: auto;
+    margin-top: 5vh;
+}
+
+/* ------ header logo & Text------ */
+
+.arist-Chatbot .head-logo{  
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;  
+        margin-left: 5%;
+}
+.arist-Chatbot h3.head-text{
+    margin-left: 2rem;
+    font-family: var(--font-family, 'Poppins'); /* Default font family */;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+}
+.arist-Chatbot h2.body-head{
+    font-family: var(--font-family, 'Poppins'); /* Default font family */;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+/* -------chat window ------ */
+
+.arist-Chatbot .message {
+    display: flex;
+    align-items: flex-start;
+}
+.arist-Chatbot .message.user {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.arist-Chatbot svg.user-Icon {
+    margin-left: 20px;
+    width: 27px;
+    height: 27px;
+}
+.arist-Chatbot svg.bot-Icon {
+    margin-right: 20px;
+    width: 27px;
+    height: 27px;
+}
+
+/* ----------Authentication window ----------------- */
+.arist-Chatbot .auth-modal{
+    padding: 10px;    
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.arist-Chatbot .auth-button{
+    width: 192px;
+    height: 52px;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid #ccc;
+    background-color: #DA291C;
+    border-color: #DA291C;
+    font-size: medium;
+    margin: 20px 0;    
+    box-sizing: border-box;
+}
+.arist-Chatbot .auth-input {
+    width: 85%;
+    height: 8vh;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 11px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    border-color: #DA291C;
+    text-align: center;
+}
+.arist-Chatbot .auth-input:focus{
+    border-color: #DA291C;
+}
+
+/* -------- document alignment inside chatbot --------------- */
+.arist-Chatbot .file-button{
+    margin-left: 3vw;
+    color: #0066FF;
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+/* ---------feedback---------------------- */
+.arist-Chatbot .userFeedback{
+    margin-left: 3vw;
+    font-family: var(--font-family, 'Poppins'); /* Default font family */;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
+.arist-Chatbot .feedback-text{
+    margin-right: 10px;
+}
+.arist-Chatbot .mR{
+    margin-right: 10px;
+}
+.arist-Chatbot .thumbs-feeback{
+    cursor: pointer;
+}
+.arist-Chatbot .feedback-button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid #ccc;
+    background-color: var(--header-background-color, #DA291C); /* Default color */;
+    border-color: var(--header-background-color, #DA291C); /* Default color */;
+    font-size: medium;
+    margin: 20px 0;    
+    box-sizing: border-box;
+}
+.arist-Chatbot .feedback-input-area{
+    min-width: 80%;
+    max-width: 80%;
+    max-height: 60px;
+    min-height: 60px;
+    margin-left: 3vw;
+    vertical-align: top;
+    text-align: left;
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 4px; /* Round the corners */
+}
+.arist-Chatbot .feebackButtonParentdiv{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2vw;
+}
+.arist-Chatbot .char-counter{
+    margin-left: 3vw;
+    font-family: var(--font-family, 'Poppins');
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #5c5858;
+}
+/* ------------- loading ------------- */
+.arist-Chatbot .loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    background-color: var(--chatWindow-background-color, white);
+}
+/* ----------- prompt ----------- */
+.arist-Chatbot .promptClass{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.arist-Chatbot .prompt-btn{
+    margin-top: 10px;
+    padding: 8px 30px;   
+    border-radius:  50px;
+    border: 1px;
+    background: #f0f0f0;
+}
+.arist-Chatbot .prompt-btn:hover {   
+    background-color: #cfc9c994;
+    box-shadow: 0 4px 20px #fefefe;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+/* ------------ responsive ------------------- */
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+    .arist-Chatbot .chatbot-modal {
+        
+        width: 90vw;
+        
+    }
+}
